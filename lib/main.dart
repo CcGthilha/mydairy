@@ -84,7 +84,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'MyDiary',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.indigo),
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.teal,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.teal, foregroundColor: Colors.white),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          type: BottomNavigationBarType.fixed,
+          selectedItemColor: Colors.teal,
+          unselectedItemColor: Colors.black54,
+        ),
+      ),
       home: const AuthGate(),
     );
   }
@@ -143,8 +152,8 @@ class _DiaryListPageState extends State<DiaryListPage> {
   late Future<Quote> _quoteFuture;
 
   final List<Color> colors = [
-    Colors.indigo,
     Colors.teal,
+    Colors.indigo,
     Colors.orange,
     Colors.pink,
     Colors.green,
@@ -698,7 +707,7 @@ class _AboutPageState extends State<AboutPage> {
               children: [
                 const CircleAvatar(
                   radius: 50,
-                  backgroundColor: Colors.indigo,
+                  backgroundColor: Colors.teal,
                   child: Icon(Icons.book, size: 50, color: Colors.white),
                 ),
                 const SizedBox(height: 20),
@@ -728,13 +737,13 @@ class _AboutPageState extends State<AboutPage> {
                     return Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: Colors.indigo.shade50,
+                        color: Colors.teal.shade50,
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: Colors.indigo.shade200),
+                        border: Border.all(color: Colors.teal.shade200),
                       ),
                       child: Column(
                         children: [
-                          const Icon(Icons.format_quote, color: Colors.indigo),
+                          const Icon(Icons.format_quote, color: Colors.teal),
                           const SizedBox(height: 6),
                           Text(
                             snapshot.data ?? '',

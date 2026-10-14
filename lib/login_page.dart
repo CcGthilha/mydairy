@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.book, size: 80, color: Colors.indigo),
+            const Icon(Icons.book, size: 80, color: Colors.teal),
             const SizedBox(height: 24),
             TextField(
               controller: _emailController,
